@@ -1,0 +1,9 @@
+name: BreweryDB
+description: Provides integration with BreweryDB API.
+type: module
+package: Сustom
+configure: brewerydb.admin_settings
+core: 8.x
+version: 8.x-1.0
+dependencies:
+  - migrate_plus

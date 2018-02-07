@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+    config:
+        - field.field.node.beer.body
+        - node.type.beer
+    module:
+        - text
+        - user
+    enforced:
+      module:
+        - brewerydb
+id: node.beer.default
+targetEntityType: node
+bundle: beer
+mode: default
+content:
+    body:
+        label: hidden
+        type: text_default
+        weight: 101
+        settings: {  }
+        third_party_settings: {  }
+    links:
+        weight: 100
+hidden: {  }

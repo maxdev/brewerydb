@@ -1,0 +1,4 @@
+administer brewerydb api:
+  title: 'Administer the BreweryDB module'
+  description: 'Configure BreweryDB authentication credentials, etc.'
+  restrict access: TRUE

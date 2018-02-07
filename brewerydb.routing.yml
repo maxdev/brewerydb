@@ -1,0 +1,7 @@
+brewerydb.admin_settings:
+  path: /admin/config/services/brewerydb
+  defaults:
+    _title: 'BreweryDB settings'
+    _form: \Drupal\brewerydb\Form\BreweryDbAdminSettings
+  requirements:
+    _permission: 'administer brewerydb api'

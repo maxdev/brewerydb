@@ -1,0 +1,5 @@
+brewerydb.admin_settings:
+  title: 'BreweryDB'
+  parent: system.admin_config_services
+  description: 'Configure the BreweryDB API settings.'
+  route_name: brewerydb.admin_settings

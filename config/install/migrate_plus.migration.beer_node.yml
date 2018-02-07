@@ -1,0 +1,53 @@
+# Migration configuration for Beer.
+
+id: beer_node
+label: Beer
+migration_group: beer
+source:
+  plugin: brewerydb_url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  headers:
+    Accept: application/json
+  urls: http://api.brewerydb.com/v2/beers
+  item_selector: data
+  fields:
+    -
+      name: beer_id
+      label: 'Unique beer identifier'
+      selector: id
+    -
+      name: beer_name
+      label: 'Beer name'
+      selector: name
+    -
+      name: beer_description
+      label: 'Beer description'
+      selector: description
+    -
+      name: beer_update_date
+      label: 'Date updated'
+      selector: updateDate
+  ids:
+    beer_id:
+      type: string
+  high_water_property:
+    name: beer_update_date
+    alias: bud
+destination:
+  plugin: entity:node
+process:
+  type:
+    plugin: default_value
+    default_value: beer
+  uid:
+    plugin: default_value
+    default_value: 1
+  title: beer_name
+  body: beer_description
+
+migration_dependencies: {}
+dependencies:
+  enforced:
+    module:
+      - brewerydb

@@ -1,0 +1,29 @@
+<?php
+
+use Drupal\Core\Datetime\DrupalDateTime;
+
+/**
+ * @file
+ * Provides the BreweryDB Import.
+ */
+
+/**
+ * Implements hook_cron().
+ *
+ * Schedules a synchronization of brewerydb api.
+ * For now it will run import each night from 00:00 till 04:00 hours
+ * independently from regular cron runs.
+ */
+function brewerydb_cron() {
+  $time = new DrupalDateTime('now');
+
+  // @TODO: make configuration of time interval more flexible.
+  if ($time->format('G') < 4) {
+    $queue = \Drupal::queue('brewerydb_beer_importer');
+
+    $queue_depth = (integer) $queue->numberOfItems();
+    if ($queue_depth === 0) {
+      $queue->createItem(TRUE);
+    }
+  }
+}

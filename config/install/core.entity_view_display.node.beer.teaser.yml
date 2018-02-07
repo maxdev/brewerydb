@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+    config:
+        - core.entity_view_mode.node.teaser
+        - field.field.node.beer.body
+        - node.type.beer
+    module:
+        - text
+        - user
+    enforced:
+      module:
+        - brewerydb
+id: node.beer.teaser
+targetEntityType: node
+bundle: beer
+mode: teaser
+content:
+    body:
+        label: hidden
+        type: text_summary_or_trimmed
+        weight: 101
+        settings:
+            trim_length: 600
+        third_party_settings: {  }
+    links:
+        weight: 100
+hidden: {  }

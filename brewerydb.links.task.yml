@@ -1,0 +1,4 @@
+brewerydb.admin_settings:
+  title: 'Settings'
+  route_name: brewerydb.admin_settings
+  base_route: brewerydb.admin_settings

@@ -1,0 +1,13 @@
+# Migration group configuration for each migration.
+
+id: beer
+label: BreweryDB Beers
+description: Import beers from BreweryDB API.
+source_type: JSON files
+shared_configuration:
+  source:
+    key: default
+dependencies:
+  enforced:
+    module:
+      - brewerydb
