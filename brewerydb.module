@@ -11,7 +11,8 @@ use Drupal\Core\Datetime\DrupalDateTime;
  * Implements hook_cron().
  *
  * Schedules a synchronization of brewerydb api.
- * For now it will run import each night from 00:00 till 04:00 hours
+ *
+ * It runs import each night from 00:00 till 04:00 hours
  * independently from regular cron runs.
  */
 function brewerydb_cron() {
